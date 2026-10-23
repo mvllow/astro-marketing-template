@@ -1,0 +1,85 @@
+---
+import { Font } from "astro:assets";
+import "../styles/global.css";
+
+type Props = {
+	title: string;
+	description: string;
+};
+
+let { title, description } = Astro.props;
+let canonical = new URL(Astro.url.pathname, Astro.site).href;
+
+let menu = [
+	{ name: "About", url: "/about" },
+	{ name: "Contact", url: "/contact" },
+];
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" href="/favicon.png" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1, viewport-fit=cover"
+		/>
+		<meta name="generator" content={Astro.generator} />
+		<meta name="description" content={description} />
+		<link rel="canonical" href={canonical} />
+		<title>{title} - Outtake Studio</title>
+
+		<Font cssVariable="--font-inter" preload />
+		<Font cssVariable="--font-editorial-new" preload />
+	</head>
+
+	<body>
+		<a href="#main" class="skip">
+			Skip to main content
+		</a>
+
+		<header class="px-page-gutters pt-page-top">
+			<nav
+				aria-label="Primary"
+				class="mx-auto max-inline-page-width grid grid-cols-3 border-y border-overlay py-3 text-xs font-medium tracking-widest text-muted uppercase"
+			>
+				<a href="/">Outtake Studio</a>
+				<span class="text-center">Est. 2026</span>
+				<span class="text-right">Chicago, IL</span>
+			</nav>
+		</header>
+
+		<main id="main" class="px-page-gutters">
+			<div class="mx-auto max-inline-page-width">
+				<slot />
+			</div>
+		</main>
+
+		<footer class="px-page-gutters">
+			<div class="mx-auto max-inline-page-width flex items-center justify-between gap-6 border-t border-overlay py-page-gutters">
+				<p class="label">© 2026 — Outtake Studio</p>
+				<a href="#!" class="text-sm text-brand underline">
+					hello@outtakestudio.com
+				</a>
+			</div>
+		</footer>
+	</body>
+</html>
+
+<style>
+	.skip {
+		position: absolute;
+		top: 0.5rem;
+		left: 0.5rem;
+		transform: translateY(-999px);
+		display: flex;
+		align-items: center;
+		background: #000;
+		padding: 0.5rem 1rem;
+		color: #fff;
+
+		&:focus {
+			transform: translateY(0%);
+		}
+	}
+</style>

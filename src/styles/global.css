@@ -1,0 +1,72 @@
+@import "tailwindcss";
+
+@theme inline {
+	--color-base: var(--color-taupe-100);
+	--color-surface: var(--color-taupe-50);
+	--color-overlay: var(--color-taupe-300);
+	--color-muted: var(--color-taupe-500);
+	--color-subtle: var(--color-taupe-700);
+	--color-text: var(--color-taupe-900);
+
+	--color-brand: var(--color-rose-600);
+	--color-on-brand: var(--color-rose-50);
+
+	--font-display: var(--font-editorial-new);
+	--font-sans: var(--font-inter);
+
+	--spacing-page-top: 4rem;
+	--spacing-page-gutters: clamp(2rem, 5vw, 6rem);
+	--spacing-page-width: 1100px;
+}
+
+@layer base {
+	html {
+		color: var(--color-text);
+		font-size: 18px;
+		line-height: 1.75;
+		background: var(--color-base);
+
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+	}
+
+	body {
+		min-height: 100dvh;
+		background: url("/grain.png");
+	}
+
+	p {
+		color: var(--color-subtle);
+		font-size: var(--text-lg);
+		text-wrap: pretty;
+	}
+}
+
+@layer components {
+	.headline {
+		font-family: var(--font-display);
+		font-size: var(--text-4xl);
+		line-height: 1.125;
+		letter-spacing: -0.025em;
+		text-transform: uppercase;
+		@media (width >= theme(--breakpoint-sm)) {
+			font-size: var(--text-5xl);
+		}
+	}
+
+	.title {
+		font-family: var(--font-display);
+		font-size: var(--text-3xl);
+		line-height: 1.125;
+		letter-spacing: -0.025em;
+		text-wrap: pretty;
+	}
+
+	.label {
+		color: var(--color-muted);
+		font-size: var(--text-xs);
+		font-weight: 500;
+		letter-spacing: 0.1em;
+		text-transform: uppercase;
+	}
+}

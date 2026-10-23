@@ -1,0 +1,36 @@
+---
+type Props = {
+	src?: string;
+	alt?: string;
+	landscape?: boolean;
+	title?: string;
+	meta?: string;
+};
+let { src, alt, landscape = false, title, meta } = Astro.props;
+---
+
+<figure>
+	{src ? (
+		<img
+			src={src}
+			alt={alt}
+			decoding="async"
+			loading="lazy"
+			class="w-full object-cover border border-overlay border-b-0"
+			style={{ aspectRatio: landscape ? "3/2" : "4/5" }}
+		/>
+	) : (
+		<div
+			aria-hidden="true"
+			class="label flex w-full items-center justify-center border border-dashed border-overlay p-6 text-center"
+			style={{ aspectRatio: landscape ? "3/2" : "4/5" }}
+		>
+			Not yet developed
+		</div>
+	)}
+
+	<figcaption class="flex items-baseline justify-between gap-4 border border-t-0 border-overlay p-2 text-xs tracking-widest text-muted uppercase bg-surface">
+		<span class="font-medium">{title}</span>
+		{meta && <span class="font-normal">{meta}</span>}
+	</figcaption>
+</figure>

@@ -1,0 +1,21 @@
+---
+type Props = {
+	href: string;
+};
+let { href } = Astro.props;
+---
+
+<a
+	href={href}
+	class="group inline-flex items-center gap-3 text-xs font-medium tracking-widest uppercase"
+>
+	<span class="underline decoration-overlay underline-offset-4 transition group-hover:decoration-brand">
+		<slot />
+	</span>
+	<span
+		aria-hidden="true"
+		class="transition-transform group-hover:translate-x-1"
+	>
+		&rarr;
+	</span>
+</a>

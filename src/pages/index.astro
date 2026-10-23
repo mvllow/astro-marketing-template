@@ -1,0 +1,142 @@
+---
+import Layout from "../layouts/layout.astro";
+import Image from "../components/image.astro";
+import Link from "../components/link.astro";
+import Section from "../components/section.astro";
+---
+
+<Layout title="Home" description="The landing page.">
+	<Section>
+		<h1 class="font-display text-6xl sm:text-8xl lg:text-9xl uppercase tracking-tight leading-none">
+			Design
+			<br />
+			without
+			<br />
+			<span class="text-brand italic">the noise.</span>
+		</h1>
+	</Section>
+
+	<div class="h-px bg-overlay"></div>
+
+	<Section>
+		<p>
+			Outtake is a small studio for interfaces, websites and SaaS products. We
+			start in the field, work in the open and ship software meant to outlast
+			the season.
+		</p>
+		<div slot="media" class="flex md:items-end h-full md:justify-end">
+			<Link href="#work">See the work</Link>
+		</div>
+	</Section>
+
+	<div class="h-px bg-overlay"></div>
+
+	<Section side="right" collapse="below">
+		<span class="label">Design</span>
+		<h2 class="title">
+			<q>Good interfaces are quieter than the people who use them.</q>
+		</h2>
+		<p class="body">
+			We treat the screen like paper: it has measure, margin and a pace of its
+			own. Type, spacing and tone are settled before a single line of code is
+			written.
+		</p>
+		<ul role="list" class="flex items-center gap-6">
+			<li class="label">UI/UX</li>
+			<li class="label">Websites</li>
+		</ul>
+		<Image
+			slot="media"
+			src="/records.webp"
+			alt="A man reaching through stacks of records in a record store, a red album sleeve in focus"
+			title="Fig. 01 — Studio archive"
+		/>
+	</Section>
+
+	<div class="h-px bg-overlay"></div>
+
+	<Section side="left" collapse="below">
+		<span class="label">Software</span>
+		<h2 class="title">
+			<q>The best product is the one your team stops thinking about.</q>
+		</h2>
+		<p class="body">
+			Half the job is finding the problem. We ride along and watch the work
+			happen — then design software that turns a daily headache into a joyful
+			interaction.
+		</p>
+		<ul role="list" class="flex items-center gap-6">
+			<li class="label">SaaS products</li>
+			<li class="label">Field notes</li>
+		</ul>
+		<Image
+			slot="media"
+			src="/boat-reading.webp"
+			alt="A woman on a boat in a swimsuit reading a magazine"
+			title="Fig. 02 — Out of office"
+		/>
+	</Section>
+
+	<div class="h-px bg-overlay"></div>
+
+	<section class="flex flex-col gap-12 py-page-gutters">
+		<div class="grid gap-6 md:grid-cols-12 md:items-end">
+			<div class="md:col-span-7">
+				<h2 class="headline">Selected work</h2>
+			</div>
+			<div class="flex md:col-span-5 md:justify-end">
+				<Link href="#projects">All projects</Link>
+			</div>
+		</div>
+
+		<div class="grid grid-cols-2 gap-6">
+			<Image
+				slot="media"
+				src="/sidewalk.webp"
+				alt="Three women walking down a big-city sidewalk past a newsstand"
+				title="Fig. 03 — Sidewalk"
+				meta="1996"
+				landscape
+			/>
+			<Image
+				slot="media"
+				src="/newspaper.webp"
+				alt="A woman in a silk blouse reading a newspaper at a dining table"
+				title="Fig. 04 — Morning edition"
+				meta="1997"
+				landscape
+			/>
+			<Image
+				slot="media"
+				src="/small-screen.webp"
+				alt="A small boxy television, switched off"
+				title="Fig. 05 — Small screen"
+				meta="1997"
+				landscape
+			/>
+			<Image slot="media" title="Fig. 06 — In the lab" landscape />
+		</div>
+	</section>
+
+	<div class="h-px bg-overlay"></div>
+
+	<Section side="left" collapse="above">
+		<span class="label">Contact</span>
+		<h2 class="title">
+			<q>We build toward whatever you’re point at.</q>
+		</h2>
+		<p class="body">
+			Tell us where it hurts: too many steps, too much clicking, a process only
+			one person understands. We’ll map it, design it, and ship the fix.
+		</p>
+
+		<Link href="#!">Start a project</Link>
+
+		<Image
+			slot="media"
+			src="/beach-pointing.webp"
+			alt="An older couple at the edge of the water, both in yellow hats, the man pointing toward the horizon"
+			title="Fig. 07 — The way forward"
+		/>
+	</Section>
+</Layout>

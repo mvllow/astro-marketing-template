@@ -1,0 +1,32 @@
+---
+type Props = {
+	side?: "left" | "right";
+	collapse?: "above" | "below";
+};
+let { side = "right", collapse = "below" } = Astro.props;
+
+let hasMedia = Astro.slots.has("media");
+---
+
+<section class="grid gap-6 py-page-top md:grid-cols-12">
+	<div
+		class:list={[
+			"flex flex-col gap-6",
+			side === "left" && "md:order-2",
+			hasMedia ? "md:col-span-7" : "md:col-span-12",
+		]}
+	>
+		<slot />
+	</div>
+	{hasMedia && (
+		<div
+			class:list={[
+				"md:col-span-5",
+				collapse === "above" && "order-first",
+				side === "left" ? "md:order-1" : "md:order-2",
+			]}
+		>
+			<slot name="media" />
+		</div>
+	)}
+</section>
