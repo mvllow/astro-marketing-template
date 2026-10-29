@@ -1,7 +1,6 @@
 ---
 import Layout from "../layouts/layout.astro";
 import Image from "../components/image.astro";
-import Link from "../components/link.astro";
 import Section from "../components/section.astro";
 ---
 
@@ -25,7 +24,9 @@ import Section from "../components/section.astro";
 			the season.
 		</p>
 		<div slot="media" class="flex md:items-end h-full md:justify-end">
-			<Link href="#work">See the work</Link>
+			<a href="#work" class="link">
+				See the work
+			</a>
 		</div>
 	</Section>
 
@@ -85,7 +86,9 @@ import Section from "../components/section.astro";
 				<h2 class="headline">Selected work</h2>
 			</div>
 			<div class="flex md:col-span-5 md:justify-end">
-				<Link href="#projects">All projects</Link>
+				<a href="#projects" class="link">
+					All projects
+				</a>
 			</div>
 		</div>
 
@@ -130,7 +133,9 @@ import Section from "../components/section.astro";
 			one person understands. We’ll map it, design it, and ship the fix.
 		</p>
 
-		<Link href="#!">Start a project</Link>
+		<a href="#!" class="link">
+			Start a project
+		</a>
 
 		<Image
 			slot="media"
